@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import react, {useState. useEffect} from "react";
+import {useState} from"./Hooks/useEffect";
+import shoppingList from"./Components/ShoppingList";
+import newInput from"./Components/NewInput";
+import items from "./Components/Item";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+export default function App() {
+      const url = "https://fetch-me.vercel.app/api/shopping/items";
+      const [items, setItems] = useState([]);
+      const [shoppingList, setShoppingList]=useState([]);
+      const [newInput,stNewInput]=useState([]);
+      const [data]= useEffect(url);
 }
 
-export default App;
